@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ParallaxBackground4.gd" type="Script" id=1]
+[ext_resource path="res://Ground.png" type="Texture" id=2]
+[ext_resource path="res://BG_Decor.png" type="Texture" id=3]
+[ext_resource path="res://Sky.png" type="Texture" id=4]
+[ext_resource path="res://Middle_Decor.png" type="Texture" id=5]
+[ext_resource path="res://Foreground.png" type="Texture" id=6]
+[ext_resource path="res://ParallaxBackground5.gd" type="Script" id=7]
+[ext_resource path="res://ParallaxBackground2.gd" type="Script" id=8]
+[ext_resource path="res://ParallaxBackground3.gd" type="Script" id=9]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="."]
+script = ExtResource( 7 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground5"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground5/ParallaxLayer"]
+position = Vector2( 512, 300.5 )
+scale = Vector2( 0.533, 0.556 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 8 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 512, 300.5 )
+scale = Vector2( 0.533, 0.556 )
+texture = ExtResource( 3 )
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+script = ExtResource( 8 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2( 512, 300.5 )
+scale = Vector2( 0.533, 0.556 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+script = ExtResource( 9 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground3"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground3/ParallaxLayer4"]
+position = Vector2( 512, 300.5 )
+scale = Vector2( 0.533, 0.556 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="."]
+script = ExtResource( 1 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground4"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground4/ParallaxLayer5"]
+position = Vector2( 512, 300.5 )
+scale = Vector2( 0.533333, 0.556481 )
+texture = ExtResource( 2 )
