@@ -1,8 +1,6 @@
 extends ParallaxBackground
 
-
-const SCREEN_WIDTH = 1024
-const SCREEN_SPEED = -200
-
+var velocitat = Vector2(90,0)
 func _process(delta):
-	scroll_base_offset -= Vector2(65,0) * delta
+	scroll_base_offset -= velocitat * delta
+	velocitat += Vector2(0.1,0)
