@@ -13,6 +13,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += Vector2(-2, 0)
+	position += Vector2(-4, 0)
 	if position.x <= 0:
 		position.x = 1024
