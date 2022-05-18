@@ -3,7 +3,7 @@ var velocitat = Vector2.ZERO
 var gravetat = Vector2.DOWN * 1200
 var salt = Vector2.UP * 35
 var pantalla = 1
-var distancia = 0
+var distancia = 1
 var acc = 0
 
 func _ready():
@@ -47,7 +47,10 @@ func anima(velocitat: Vector2):
 func _on_Timer_timeout():
 	distancia = distancia + acc
 	update_distancia()
-	acc += 0.01
-
+	if acc > 5:
+		acc = 5
+	else:
+		acc += 0.01
+	
 func update_distancia():
 	$CanvasLayer/Label.text = str(floor(distancia))
