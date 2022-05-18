@@ -26,7 +26,6 @@ func anima(velocitat: Vector2):
 	var particules: Particles2D = $Particles2D
 	
 	if Input.is_action_just_pressed("Vola"):
-		animacio.play("volar")
 		particules.emitting = true
 		#crea_projectils()
 	if Input.is_action_just_released("Vola"):
@@ -34,7 +33,8 @@ func anima(velocitat: Vector2):
 		particules.emitting = false
 	if position.y > 800:
 		animacio.play("correr")
-		
+	if Input.is_action_pressed("Vola"):
+		animacio.play("volar")
 #func crea_projectils():
 #	var escena_projectils = load("res://Jan/Escenes/Projectil.tscn")
 #	var nou_projectil = escena_projectils.instance()
