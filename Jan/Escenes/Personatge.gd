@@ -1,7 +1,8 @@
 extends KinematicBody2D
 var velocitat = Vector2.ZERO 
 var gravetat = Vector2.DOWN * 1200
-var salt = Vector2.UP * 35
+var limit_velocitat_y = -700
+var salt = Vector2.UP * 50 * 60
 var pantalla = 1
 var distancia = 1
 var acc = 0
@@ -9,13 +10,16 @@ var acc = 0
 func _ready():
 	velocitat.x = 1
 #	position = Vector2(480,50)
-	
+
 func _physics_process(delta):
 	if Input.is_action_pressed("Vola"):
-		velocitat.y += salt.y
-	if position.x > 1000:
-		velocitat.x = velocitat.x * -1 
-		
+		if velocitat.y > limit_velocitat_y:
+			velocitat.y += salt.y * delta
+		if velocitat.y < limit_velocitat_y:
+			velocitat.y = limit_velocitat_y
+#	if position.x > 1000:
+#		velocitat.x = velocitat.x * -1 
+	
 	velocitat += gravetat * delta
 	velocitat = move_and_slide(velocitat, Vector2.UP)
 
