@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ratolí.png-17a25abff48f707217d49b67ae791988.stex"
+path="res://.import/ratolí.png-98b1956f41142ce6ab730ba785bc7a67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imatges/ratolí.png"
-dest_files=[ "res://.import/ratolí.png-17a25abff48f707217d49b67ae791988.stex" ]
+source_file="res://Imatges/ratolí.png"
+dest_files=[ "res://.import/ratolí.png-98b1956f41142ce6ab730ba785bc7a67.stex" ]
 
 [params]
 

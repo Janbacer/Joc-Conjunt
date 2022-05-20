@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/game over.png-585f46188e9ab21a39fdeeb1be8474ff.stex"
+path="res://.import/game over.png-82f6c648d86eb82244e23fb6eb6ab9f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imatges/game over.png"
-dest_files=[ "res://.import/game over.png-585f46188e9ab21a39fdeeb1be8474ff.stex" ]
+source_file="res://Imatges/game over.png"
+dest_files=[ "res://.import/game over.png-82f6c648d86eb82244e23fb6eb6ab9f7.stex" ]
 
 [params]
 

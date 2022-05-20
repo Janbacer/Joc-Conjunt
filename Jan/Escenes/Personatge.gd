@@ -35,7 +35,7 @@ func anima(velocitat: Vector2):
 	if Input.is_action_just_released("Vola"):
 		animacio.play("quiet")
 		particules.emitting = false
-	if position.y > 800:
+	if position.y > 770:
 		animacio.play("correr")
 	if Input.is_action_pressed("Vola"):
 		animacio.play("volar")
@@ -54,7 +54,7 @@ func _on_Timer_timeout():
 	if acc > 5:
 		acc = 5
 	else:
-		acc += 0.01
+		acc += 0.005
 	
 func update_distancia():
 	$CanvasLayer/Label.text = str(floor(distancia))

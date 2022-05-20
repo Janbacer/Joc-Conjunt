@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/start imatge.png-d271d889df01f8bc579f00e45df06ba6.stex"
+path="res://.import/start imatge.png-568530e59badaa23435b7c2c351ba3b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imatges/start imatge.png"
-dest_files=[ "res://.import/start imatge.png-d271d889df01f8bc579f00e45df06ba6.stex" ]
+source_file="res://Imatges/start imatge.png"
+dest_files=[ "res://.import/start imatge.png-568530e59badaa23435b7c2c351ba3b3.stex" ]
 
 [params]
 

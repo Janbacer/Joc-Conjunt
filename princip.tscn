@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sky.png" type="Texture" id=1]
 [ext_resource path="res://ParallaxBackground2.gd" type="Script" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://BG_Decor.png" type="Texture" id=8]
 [ext_resource path="res://Foreground.png" type="Texture" id=9]
 [ext_resource path="res://Middle_Decor.png" type="Texture" id=10]
+[ext_resource path="res://Jan/Escenes/Personatge.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 800.063, 91.25 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -57,7 +61,12 @@ position = Vector2( 799.68, 449.82 )
 scale = Vector2( 0.833667, 0.833667 )
 texture = ExtResource( 9 )
 
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 512, 345 )
+scale = Vector2( 0.2, 0.2 )
+
 [node name="ParallaxBackground4" type="ParallaxBackground" parent="."]
+layer = 1
 script = ExtResource( 4 )
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground4"]
@@ -67,3 +76,14 @@ motion_mirroring = Vector2( 1600, 0 )
 position = Vector2( 799.68, 449.82 )
 scale = Vector2( 0.833667, 0.833667 )
 texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 516.5, 601 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 282.5, 324.25 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 283.438, -668 )
+shape = SubResource( 1 )
