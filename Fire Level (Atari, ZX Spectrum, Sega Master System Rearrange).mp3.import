@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Fire Level (Atari, ZX Spectrum, Sega Master System Rearrange).mp3-15a3451e45b7676679a6a93f8fafc216.mp3str"
+
+[deps]
+
+source_file="res://Fire Level (Atari, ZX Spectrum, Sega Master System Rearrange).mp3"
+dest_files=[ "res://.import/Fire Level (Atari, ZX Spectrum, Sega Master System Rearrange).mp3-15a3451e45b7676679a6a93f8fafc216.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

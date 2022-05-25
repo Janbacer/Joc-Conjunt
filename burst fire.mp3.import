@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/burst fire.mp3-43152c7f254c13571be05866e721e7af.mp3str"
+
+[deps]
+
+source_file="res://burst fire.mp3"
+dest_files=[ "res://.import/burst fire.mp3-43152c7f254c13571be05866e721e7af.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

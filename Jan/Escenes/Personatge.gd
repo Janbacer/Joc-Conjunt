@@ -37,16 +37,20 @@ func anima(velocitat: Vector2):
 	if viu:
 		if Input.is_action_just_pressed("Vola"):
 			particules.emitting = true
+			$sobalas.playing= true
 			#crea_projectils()
 		if Input.is_action_just_released("Vola"):
 			animacio.play("quiet")
 			particules.emitting = false
+			$sobalas.playing = false
 		if position.y > 770:
 			animacio.play("correr")
 		if Input.is_action_pressed("Vola"):
 			animacio.play("volar")
 	else:
 		animacio.play("volar i morir")
+		particules.emitting = false
+		$sobalas.playing = false
 	
 #func crea_projectils():
 #	var escena_projectils = load("res://Jan/Escenes/Projectil.tscn")
