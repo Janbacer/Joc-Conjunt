@@ -51,6 +51,8 @@ func anima(velocitat: Vector2):
 		animacio.play("volar i morir")
 		particules.emitting = false
 		$sobalas.playing = false
+		if position.y > 770:
+			animacio.play("morir terra")
 	
 #func crea_projectils():
 #	var escena_projectils = load("res://Jan/Escenes/Projectil.tscn")
