@@ -116,7 +116,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="StaticBody2D"]
+[node name="LASER" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -124,20 +124,20 @@ position = Vector2( 2.5, 0.5 )
 shape = SubResource( 22 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -3 )
-scale = Vector2( 2.96387, 1 )
+position = Vector2( 3.05176e-05, -4 )
+scale = Vector2( 4.37256, 1.42188 )
 frames = SubResource( 21 )
-frame = 8
+frame = 4
 speed_scale = 4.0
 playing = true
 script = ExtResource( 4 )
 
 [node name="2a-removebg-preview" type="Sprite" parent="."]
-position = Vector2( -639, -1 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( -935, -1 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 
 [node name="2b-removebg-preview" type="Sprite" parent="."]
-position = Vector2( 649, -1 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 954, -1 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )

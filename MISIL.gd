@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -15,4 +15,4 @@ func _ready():
 func _process(delta):
 	position += Vector2(-4, 0)
 	if position.x <= 0:
-		position.x = 1024
+		position.x = 1600
