@@ -222,7 +222,7 @@ rotation = 1.5708
 scale = Vector2( 0.59685, 0.563025 )
 frames = SubResource( 68 )
 animation = "New Anim"
-frame = 1
+frame = 4
 speed_scale = 5.0
 playing = true
 
