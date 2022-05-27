@@ -59,7 +59,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 39.4995, 255 )
+extents = Vector2( 21.5, 138 )
 
 [node name="RAYO" type="Area2D"]
 material = SubResource( 1 )
@@ -82,11 +82,10 @@ texture = ExtResource( 1 )
 material = SubResource( 2 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 11 )
-frame = 7
+frame = 6
 speed_scale = 15.0
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -0.500467, 7.76884e-05 )
+position = Vector2( 0.499998, 2.00405e-06 )
 shape = SubResource( 12 )

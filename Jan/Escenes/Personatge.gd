@@ -80,3 +80,7 @@ func update_distancia():
 func _on_MISIL_body_entered(body):
 	viu = false
 
+
+
+func _on_RAYO_body_entered(body):
+	viu = false
