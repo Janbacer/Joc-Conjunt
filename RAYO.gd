@@ -1,11 +1,11 @@
 extends Area2D
 
 
-export (int) var velocidad_misil = -300
+export (int) var velocidad = -300
 
 
 func _process(delta):
-	global_translate(Vector2.RIGHT * velocidad_misil * delta)
+	global_translate(Vector2.RIGHT * velocidad * delta)
 	if global_position.x <= -404:
 		queue_free()
 

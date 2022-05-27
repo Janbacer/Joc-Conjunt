@@ -4,6 +4,12 @@
 [ext_resource path="res://smoke_07.png" type="Texture" id=2]
 [ext_resource path="res://b34c5c06800b3a04d57a8e1e56d654ae.png" type="Texture" id=4]
 
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 54.5, 15 )
+
+[sub_resource type="CircleShape2D" id=70]
+radius = 15.0
+
 [sub_resource type="Gradient" id=103]
 offsets = PoolRealArray( 0.161491, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
@@ -199,13 +205,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=70]
-radius = 15.0
-
-[sub_resource type="RectangleShape2D" id=69]
-extents = Vector2( 54.5, 15 )
-
 [node name="Misil" type="Area2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 3.5, 0 )
+shape = SubResource( 69 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -48, 0 )
+shape = SubResource( 70 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 50, 0 )
@@ -222,17 +230,9 @@ rotation = 1.5708
 scale = Vector2( 0.59685, 0.563025 )
 frames = SubResource( 68 )
 animation = "New Anim"
-frame = 4
+frame = 28
 speed_scale = 5.0
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -48, 0 )
-shape = SubResource( 70 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 3.5, 0 )
-shape = SubResource( 69 )
