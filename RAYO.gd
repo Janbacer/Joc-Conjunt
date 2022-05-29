@@ -1,16 +1,13 @@
 extends Area2D
 
 
-export (int) var velocidad = -300
-
-
 func _process(delta):
-	global_translate(Vector2.RIGHT * velocidad * delta)
+	global_translate(Vector2.RIGHT * global_var.vel_obs * delta)
 	if global_position.x <= -404:
 		queue_free()
+	self.visible = global_var.viu
 
 
-func _cuerpo_entro(body):
-	if body is RigidBody2D:
-#		en_juego = false
-		pass
+func _cuerpo_entro_rayo(body):
+	if body is KinematicBody2D:
+		global_var.viu = false

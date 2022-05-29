@@ -12,13 +12,22 @@ config_version=4
 
 config/name="Joc Conjunt"
 run/main_scene="res://escenes/escena inicial.tscn"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
+
+[autoload]
+
+global_var="*res://Variables_globales/global_var.gd"
+
+[debug]
+
+settings/size/test_width=0
 
 [display]
 
 window/size/width=1600
 window/size/height=900
-window/size/fullscreen=true
+window/size/resizable=false
 
 [input]
 

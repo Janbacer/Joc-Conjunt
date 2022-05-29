@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Sky.png" type="Texture" id=1]
 [ext_resource path="res://ParallaxBackground2.gd" type="Script" id=2]
@@ -11,12 +11,51 @@
 [ext_resource path="res://Foreground.png" type="Texture" id=9]
 [ext_resource path="res://Middle_Decor.png" type="Texture" id=10]
 [ext_resource path="res://Jan/Escenes/Personatge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://f9e5bfdc97eaef4c4904c278d6d8ea17.png" type="Texture" id=12]
+[ext_resource path="res://istockphoto-1136751443-612x612.jpg" type="Texture" id=13]
 [ext_resource path="res://Fire Level (Atari, ZX Spectrum, Sega Master System Rearrange).mp3" type="AudioStream" id=14]
 [ext_resource path="res://Imatges/burst fire.mp3" type="AudioStream" id=15]
-[ext_resource path="res://CONTENEDOR_RAYO.tscn" type="PackedScene" id=16]
+[ext_resource path="res://CONTENEDOR.tscn" type="PackedScene" id=16]
+[ext_resource path="res://game_over_PNG57.png" type="Texture" id=17]
+[ext_resource path="res://Game Over.gd" type="Script" id=18]
+[ext_resource path="res://kenney_fontpackage/Fonts/Kenney High.ttf" type="DynamicFontData" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 800.063, 91.25 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 19 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 7, 831 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "mover"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 850 ), Vector2( 0, 0 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 
@@ -99,4 +138,48 @@ shape = SubResource( 1 )
 stream = ExtResource( 14 )
 autoplay = true
 
-[node name="CONTENEDOR_RAYO" parent="." instance=ExtResource( 16 )]
+[node name="CONTENEDOR" parent="." instance=ExtResource( 16 )]
+
+[node name="Game Over" type="Node2D" parent="."]
+visible = false
+position = Vector2( 7, 831 )
+script = ExtResource( 18 )
+
+[node name="Sprite" type="Sprite" parent="Game Over"]
+position = Vector2( 799.5, 449.5 )
+scale = Vector2( 0.94281, 1.61029 )
+texture = ExtResource( 13 )
+
+[node name="Sprite2" type="Sprite" parent="Game Over"]
+position = Vector2( 800, 450 )
+scale = Vector2( 1, 0.801663 )
+texture = ExtResource( 12 )
+
+[node name="pn-actual" type="Label" parent="Game Over"]
+margin_left = 692.0
+margin_top = 504.0
+margin_right = 908.0
+margin_bottom = 600.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Puntuació:"
+align = 1
+valign = 1
+
+[node name="textGameOver" type="Sprite" parent="Game Over"]
+position = Vector2( 800, 300 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 17 )
+
+[node name="Button" type="Button" parent="Game Over"]
+margin_left = 735.0
+margin_top = 678.0
+margin_right = 864.0
+margin_bottom = 721.0
+text = "RESTART"
+
+[node name="anim" type="AnimationPlayer" parent="Game Over"]
+anims/RESET = SubResource( 2 )
+anims/mover = SubResource( 3 )
+
+[connection signal="pressed" from="Game Over/Button" to="KinematicBody2D2" method="_on_Button_pressed"]

@@ -17,7 +17,7 @@ func _process(delta):
 
 func crear_misil():
 	var nuevo_misil = misil.instance()
-	nuevo_misil.global_position = Vector2(1700, rand_range(50, 750))
+	nuevo_misil.global_position = Vector2(2000, rand_range(50, 750))
 	add_child(nuevo_misil)
 
 func crear_obstaculo():

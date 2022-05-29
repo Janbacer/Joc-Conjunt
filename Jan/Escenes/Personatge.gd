@@ -4,9 +4,7 @@ var gravetat = Vector2.DOWN * 1200
 var limit_velocitat_y = -700
 var salt = Vector2.UP * 50 * 60
 var pantalla = 1
-var distancia = 1
 var acc = 0
-var viu = true
 
 
 func _ready():
@@ -14,7 +12,7 @@ func _ready():
 #	position = Vector2(480,50)
 
 func _physics_process(delta):
-	if viu:
+	if global_var.viu:
 		velocitat.x = 0
 		if Input.is_action_pressed("Vola"):
 			if velocitat.y > limit_velocitat_y:
@@ -34,7 +32,7 @@ func _physics_process(delta):
 func anima(velocitat: Vector2):
 	var animacio: AnimatedSprite = $AnimatedSprite
 	var particules: Particles2D = $Particles2D
-	if viu:
+	if global_var.viu:
 		if Input.is_action_just_pressed("Vola"):
 			particules.emitting = true
 			$sobalas.playing= true
@@ -64,7 +62,7 @@ func anima(velocitat: Vector2):
 
 
 func _on_Timer_timeout():
-	distancia = distancia + acc
+	global_var.distancia = global_var.distancia + acc
 	update_distancia()
 	if acc > 5:
 		acc = 5
@@ -72,15 +70,10 @@ func _on_Timer_timeout():
 		acc += 0.005
 	
 func update_distancia():
-	$CanvasLayer/Label.text = str(floor(distancia))
+	$CanvasLayer/Label.text = str(floor(global_var.distancia))
 
 
-
-
-func _on_MISIL_body_entered(body):
-	viu = false
-
-
-
-func _on_RAYO_body_entered(body):
-	viu = false
+func _on_Button_pressed():
+	global_var.viu = true
+	global_var.distancia = 1
+	get_tree().reload_current_scene()
